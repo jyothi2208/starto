@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Are you Bored?</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="are you bored.css">
+    <style>
+        body {
+          margin: 0;
+          font-size: 28px;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .header {
+          background-color: #f1f1f1;
+          padding: 30px;
+          text-align: center;
+        }
+        
+        #navbar {
+          overflow: hidden;
+          background-color: black;
+        }
+        
+        #navbar a {
+          float: left;
+          display: block;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+        }
+        
+        #navbar a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+        
+        #navbar a.active {
+          background-color: #04AA6D;
+          color: white;
+        }
+        
+        .content {
+          padding: 16px;
+        }
+        
+        .sticky {
+          position: fixed;
+          top: 0;
+          width: 100%;
+        }
+        
+        .sticky + .content {
+          padding-top: 60px;
+        }
+        </style>
+</head>
+<body>
+
+    <div id="navbar">
+        <a href="C:\Users\nagaj\OneDrive\Desktop\StartTo\home2.html"><i class="fa fa-fw fa-home"></i>Home</a>
+        <a href="javascript:void(0)"><i class='fa fa-fw fa-id-card'></i>Membership</a>
+        <a style="float: right;" href="javascript:void(0)"><i class="fa fa-fw fa-user"></i>Profile</a>
+      </div>
+   
+      
+      <!-- Hover #1 -->
+<div class="box-1">
+    <a href="file:///C:/Users/nagaj/OneDrive/Desktop/starto%20exp/quizes/quize%20homepage.html" target="_blank" style="text-decoration:none;">
+    <div  class="btn btn-one">
+      <span>Quizes</span>
+    </div></a>
+  </div>
+   
+  <!-- Hover #2 -->
+  <div class="box-2">
+    <a href="D:\Staro-web\Are you Bored\Jokes\jokes home.html" target="_blank" style="text-decoration: none;">
+    <div class="btn btn-two">
+      <span>Jokes</span>
+    </div></a>
+  </div>
+
+  
+<!-- Hover #3 -->
+<div class="box-3">
+  <a href="D:\Staro-web\Are you Bored\Jokes\scratch card\scratch home.html" target="_blank" style="text-decoration: none;">
+    <div class="btn btn-three">
+      <span>Scratch cards</span>
+    </div></a>
+  </div>
+  
+  
+      
+      
+       
+      
+
+    
+</body>
+      
+<script>
+    window.onscroll = function() {myFunction()};
+    
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+    </script>
+</html>

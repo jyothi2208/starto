@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+    <style>
+        body {
+  font-size: 16px;
+  font-family: "Helvetica", "Arial", sans-serif;
+  text-align: center;
+  background-color: #f8faff;
+}
+
+.bubbly-button {
+  font-family: "Helvetica", "Arial", sans-serif;
+  display: inline-block;
+  font-size: 1em;
+  margin: 0px;
+  padding: 20px 50px;
+  margin-top: 100px;
+  margin-bottom: 0px;
+  -webkit-appearance: none;
+  appearance: none;
+ 
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  position: center;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  box-shadow: 0 2px 25px rgba(255, 250, 252, 0.5);
+}
+.bubbly-button:focus {
+  outline: 0;
+}
+.bubbly-button:before, .bubbly-button:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+.bubbly-button:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 20%, #ff0081 20%, transparent 30%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+.bubbly-button:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+.bubbly-button:active {
+  transform: scale(0.9);
+  background-color: #e60074;
+  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+}
+.bubbly-button.animate:before {
+  display: block;
+  animation: topBubbles ease-in-out 0.75s forwards;
+}
+.bubbly-button.animate:after {
+  display: block;
+  animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+
+@keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+/* Nav Bar*/
+#navbar {
+  overflow: hidden;
+  background-color: transparent;
+  
+  
+}
+#navbar a {
+  float: right;
+  display: block;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 50px;
+  text-decoration: none;
+  font-size: 17px;
+  
+  
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+
+.content {
+  padding: 20px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+/*Background Animation*/
+
+body { 
+  background: #006E7F;
+  overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+}
+.loop-wrapper {
+    padding-top: 100px;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-bottom: 3px solid #fff;
+  color: #fff;
+}
+.mountain {
+  position: absolute;
+  right: -900px;
+  bottom: -20px;
+  width: 2px;
+  height: 2px;
+  box-shadow: 
+    0 0 0 50px #4DB6AC,
+    60px 50px 0 70px #4DB6AC,
+    90px 90px 0 50px #4DB6AC,
+    250px 250px 0 50px #4DB6AC,
+    290px 320px 0 50px #4DB6AC,
+    320px 400px 0 50px #4DB6AC
+    ;
+  transform: rotate(130deg);
+  animation: mtn 20s linear infinite;
+}
+.hill {
+  position: absolute;
+  right: -900px;
+  bottom: -50px;
+  width: 400px;
+  border-radius: 50%;
+  height: 20px;
+  box-shadow: 
+    0 0 0 50px #4DB6AC,
+    -20px 0 0 20px #4DB6AC,
+    -90px 0 0 50px #4DB6AC,
+    250px 0 0 50px #4DB6AC,
+    290px 0 0 50px #4DB6AC,
+    620px 0 0 50px #4DB6AC;
+  animation: hill 4s 2s linear infinite;
+}
+.tree, .tree:nth-child(2), .tree:nth-child(3) {
+  position: absolute;
+  height: 100px; 
+  width: 35px;
+  bottom: 0;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/130015/tree.svg) no-repeat;
+}
+.rock {
+  margin-top: -17%;
+  height: 2%; 
+  width: 2%;
+  bottom: -2px;
+  border-radius: 20px;
+  position: absolute;
+  background: #ddd;
+}
+.truck, .wheels {
+  transition: all ease;
+  width: 85px;
+  margin-right: -60px;
+  bottom: 0px;
+  right: 50%;
+  position: absolute;
+  background: #eee;
+}
+.truck {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/130015/truck.svg) no-repeat;
+  background-size: contain;
+  height: 60px;
+}
+.truck:before {
+  content: " ";
+  position: absolute;
+  width: 25px;
+  box-shadow:
+    -30px 28px 0 1.5px #fff,
+     -35px 18px 0 1.5px #fff;
+}
+.wheels {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/130015/wheels.svg) no-repeat;
+  height: 15px;
+  margin-bottom: 0;
+  box-shadow: black;
+}
+
+.tree  { animation: tree 3s 0.000s linear infinite; }
+.tree:nth-child(2)  { animation: tree2 2s 0.150s linear infinite; }
+.tree:nth-child(3)  { animation: tree3 8s 0.050s linear infinite; }
+.rock  { animation: rock 4s   -0.530s linear infinite; }
+.truck  { animation: truck 4s   0.080s ease infinite; }
+.wheels  { animation: truck 4s   0.001s ease infinite; }
+.truck:before { animation: wind 1.5s   0.000s ease infinite; }
+
+
+@keyframes tree {
+  0%   { transform: translate(1350px); }
+  50% {}
+  100% { transform: translate(-50px); }
+}
+@keyframes tree2 {
+  0%   { transform: translate(650px); }
+  50% {}
+  100% { transform: translate(-50px); }
+}
+@keyframes tree3 {
+  0%   { transform: translate(2750px); }
+  50% {}
+  100% { transform: translate(-50px); }
+}
+
+@keyframes rock {
+  0%   { right: -200px; }
+  100% { right: 2000px; }
+}
+@keyframes truck {
+  0%   { }
+  6%   { transform: translateY(0px); }
+  7%   { transform: translateY(-6px); }
+  9%   { transform: translateY(0px); }
+  10%   { transform: translateY(-1px); }
+  11%   { transform: translateY(0px); }
+  100%   { }
+}
+@keyframes wind {
+  0%   {  }
+  50%   { transform: translateY(3px) }
+  100%   { }
+}
+@keyframes mtn {
+  100% {
+    transform: translateX(-2000px) rotate(130deg);
+  }
+}
+@keyframes hill {
+  100% {
+    transform: translateX(-2000px);
+  }
+}
+ 
+
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <a style="float: right;" href="javascript:void(0)"><i class="fa fa-fw fa-user"></i>Profile</a>
+        <a href="C:\Users\nagaj\OneDrive\Desktop\StartTo\home2.html" style="float: left;"><i class="fa fa-fw fa-home"></i>Home</a>
+        <a href="javascript:void(0)" style="float: left;"><i class='fa fa-fw fa-id-card'></i>Membership</a>
+      </div>
+      <a href="C:\Users\nagaj\OneDrive\Desktop\starto exp\Games\Hangman.html" style="text-decoration: none;">
+    <button class="bubbly-button" style="margin-right: 90px;margin-left: 70px; background-color:#C65D7B;box-shadow: 0 2px 25px rgba(94, 76, 83, 0.5);">Hangman</button></a>
+
+     <a href="C:\Users\nagaj\OneDrive\Desktop\starto exp\Games\memory.html" style="text-decoration:none;">
+    <button class="bubbly-button" style=" margin-right: 100px; background-color: #8B2F97;box-shadow: 0 2px 25px rgba(94, 76, 83, 0.5);">Flip Card</button></a>
+
+    <a href="file:///C:/Users/nagaj/OneDrive/Desktop/starto%20exp/Games/Carnival.html" style="text-decoration:none ;">
+    <button class="bubbly-button"  style=" margin-right: 100px;box-shadow: 0 2px 25px rgba(94, 76, 83, 0.5);background-color: #D82148;">Carnival Hit</button></a>
+
+    <a href="C:\Users\nagaj\OneDrive\Desktop\starto exp\Games\snake.html" style="text-decoration: none;">
+    <button class="bubbly-button"style="margin-right:100px  ;box-shadow: 0 2px 25px rgba(94, 76, 83, 0.5);background-color: #913175;">Snake Game</button></a>
+
+    <a href="C:\Users\nagaj\OneDrive\Desktop\starto exp\Games\2048.html" style="text-decoration: none;">
+    <button class="bubbly-button" style=" margin-right: 100px;box-shadow: 0 2px 25px rgba(90, 69, 77, 0.5);background-color: #470D21;">2048</button></a>
+    
+    <a href="D:\Staro-web\Games\ToD.html" style="text-decoration: none;">
+    <button class="bubbly-button" style="margin-top: 80px;margin-right: 100px;box-shadow: 0 2px 25px rgba(94, 76, 83, 0.5);background-color: #ff0081;">Truth/Dare</button></a>
+
+    <a href="C:\Users\nagaj\OneDrive\Desktop\starto exp\Games\Tic-tac-toe.html">
+    <button class="bubbly-button" style="margin-top: 80px;box-shadow: 0 2px 25px rgba(238, 179, 40, 0.5);background-color: #F78812;">Tic-Tac-Toe</button></a>
+
+    <div class="loop-wrapper">
+        <div class="mountain"></div>
+        <div class="hill"></div>
+        <div class="tree"></div>
+        <div class="tree"></div>
+        <div class="tree"></div>
+        <div class="rock"></div>
+        <div class="truck"></div>
+        <div class="wheels"></div>
+      </div> 
+     
+
+
+
+
+    <script>
+        var animateButton = function(e) {
+
+e.preventDefault;
+//reset animation
+e.target.classList.remove('animate');
+
+e.target.classList.add('animate');
+setTimeout(function(){
+  e.target.classList.remove('animate');
+},700);
+};
+
+var bubblyButtons = document.getElementsByClassName("bubbly-button");
+
+for (var i = 0; i < bubblyButtons.length; i++) {
+bubblyButtons[i].addEventListener('click', animateButton, false);
+}
+    </script>
+</body>
+
+</html>
